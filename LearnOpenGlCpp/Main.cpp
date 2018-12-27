@@ -1,5 +1,5 @@
 #include<glad/glad.h>
-#include<glfw3.h>
+#include <Glfw3/glfw3.h>
 #include<iostream>
 
 void frameBufferSizeCallback(GLFWwindow* window, int width, int height);

@@ -70,12 +70,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>D:\WorkZone\Projects\LearnOpenGlExternalDependecies\includes;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\WorkZone\Projects\LearnOpenGlExternalDependecies\libs;$(LibraryPath)</LibraryPath>
+    <IncludePath>E:\projects\LearnOpenGlCpp\ExternalLibsAndHeaders\Libs;E:\projects\LearnOpenGlCpp\ExternalLibsAndHeaders\Includes;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\projects\LearnOpenGlCpp\ExternalLibsAndHeaders\Libs;D:\WorkZone\Projects\LearnOpenGlExternalDependecies\libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>D:\WorkZone\Projects\LearnOpenGlExternalDependecies\includes;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\WorkZone\Projects\LearnOpenGlExternalDependecies\libs;$(LibraryPath)</LibraryPath>
+    <IncludePath>E:\projects\LearnOpenGlCpp\ExternalLibsAndHeaders\Libs;E:\projects\LearnOpenGlCpp\ExternalLibsAndHeaders\Includes;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\projects\LearnOpenGlCpp\ExternalLibsAndHeaders\Libs\Glfw3;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -86,7 +86,11 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>E:\projects\LearnOpenGlCpp\ExternalLibsAndHeaders\Libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -98,7 +102,11 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -129,7 +137,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\Kit\glad\src\glad.c" />
+    <ClCompile Include="..\..\..\tools\GraphicsProgramming\glad\src\glad.c" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
