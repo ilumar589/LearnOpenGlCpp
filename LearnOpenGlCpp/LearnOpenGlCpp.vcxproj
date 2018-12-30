@@ -103,6 +103,7 @@
     <Link>
       <AdditionalDependencies>opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
       <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
@@ -139,6 +140,15 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\tools\GraphicsProgramming\glad\src\glad.c" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="ShaderContainer.cpp" />
+    <ClCompile Include="TriangleExample.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ShaderContainer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="fragmentShaderT1.txt" />
+    <Text Include="vertexShaderT1.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
