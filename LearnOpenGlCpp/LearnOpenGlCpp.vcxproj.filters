@@ -27,9 +27,15 @@
     <ClCompile Include="ShaderContainer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TwoTrianglesExample.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ShaderContainer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TwoTrianglesExample.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
