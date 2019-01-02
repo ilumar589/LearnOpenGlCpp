@@ -26,7 +26,7 @@ void TwoTrianglesExample::executeExample() {
 
 	//===== SHADER SETUP ========
 
-	ShaderContainer shaderContainer{"vertexShaderT1.txt", "fragmentShaderT1.txt"};
+	ShaderContainer shaderContainer{"VertexShaderT2.glsl", "FragmentShaderT2.glsl"};
 
 	//===== VERTEX SHADER ========
 	GLuint vertexShaderId = glCreateShader(GL_VERTEX_SHADER);

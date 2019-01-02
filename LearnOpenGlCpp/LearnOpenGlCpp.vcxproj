@@ -152,6 +152,10 @@
     <Text Include="fragmentShaderT1.txt" />
     <Text Include="vertexShaderT1.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="FragmentShaderT2.glsl" />
+    <None Include="VertexShaderT2.glsl" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

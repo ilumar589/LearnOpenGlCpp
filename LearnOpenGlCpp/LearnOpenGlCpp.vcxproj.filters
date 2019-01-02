@@ -43,4 +43,8 @@
     <Text Include="vertexShaderT1.txt" />
     <Text Include="fragmentShaderT1.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="VertexShaderT2.glsl" />
+    <None Include="FragmentShaderT2.glsl" />
+  </ItemGroup>
 </Project>
