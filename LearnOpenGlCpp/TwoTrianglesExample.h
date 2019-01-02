@@ -1,7 +1,7 @@
 #pragma once
 
-#include<glad/glad.h>
-#include <Glfw3/glfw3.h>
+#include <glad/glad.h>
+#include <glfw3.h>
 #include<iostream>
 
 namespace TwoTrianglesExample {

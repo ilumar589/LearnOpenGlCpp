@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{A7B7514D-69D2-4F3C-B831-AA448B008090}</ProjectGuid>
     <RootNamespace>LearnOpenGlCpp</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -74,8 +74,8 @@
     <LibraryPath>E:\projects\LearnOpenGlCpp\ExternalLibsAndHeaders\Libs;D:\WorkZone\Projects\LearnOpenGlExternalDependecies\libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>E:\projects\LearnOpenGlCpp\ExternalLibsAndHeaders\Libs;E:\projects\LearnOpenGlCpp\ExternalLibsAndHeaders\Includes;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\projects\LearnOpenGlCpp\ExternalLibsAndHeaders\Libs\Glfw3;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\WorkZone\Projects\CppProjects\CppLibraries\glfw-3.2.1-headers_and_libs;D:\WorkZone\Projects\CppProjects\CppLibraries\glad_for_opengl_3.3_core\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\WorkZone\Projects\CppProjects\CppLibraries\glfw-3.2.1-headers_and_libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -138,7 +138,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\tools\GraphicsProgramming\glad\src\glad.c" />
+    <ClCompile Include="..\..\CppLibraries\glad_for_opengl_3.3_core\src\glad.c" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="ShaderContainer.cpp" />
     <ClCompile Include="TriangleExample.cpp" />
