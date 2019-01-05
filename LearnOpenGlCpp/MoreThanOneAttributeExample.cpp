@@ -29,9 +29,10 @@ void MoreThanOneAttributeExample::executeExample() {
 
 	// setup triangle vertices
 	float triangle_vertices[] = {
-		-0.5f, -0.5f, 0.0f,
-		0.5f, -0.5f, 0.0f,
-		0.0f, 0.5f, 0.0f
+		// positions            // colors
+		-0.5f, -0.5f, 0.0f,     1.0f, 0.0f, 0.0f,
+		0.5f, -0.5f, 0.0f,		0.0f, 1.0f, 0.0f,
+		0.0f, 0.5f, 0.0f,		0.0f, 0.0f, 1.0f
 	};
 
 	unsigned int VAO, VBO;
@@ -46,10 +47,13 @@ void MoreThanOneAttributeExample::executeExample() {
 
 	glBufferData(GL_ARRAY_BUFFER, sizeof(triangle_vertices), triangle_vertices, GL_STATIC_DRAW); // copy the triangle vertices into the vertex buffers object memory
 
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0); // tell OpenGL how the attribute 
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0); // tell OpenGL how the attribute 
 									// pointing to the currently bound vbo should interpret the data
 									// in this case vertex attribute 0 from the currently bounded vao
 	glEnableVertexAttribArray(0); // enable vertex attribute 0
+
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+	glEnableVertexAttribArray(1);
 
 	// note that this is allowed, the call to glVertexAttribPointer registered VBO as the vertex attribute's bound vertex buffer object so afterwards we can safely unbind
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
