@@ -49,9 +49,21 @@ void TwoTrianglesExample::executeExample() {
 	glLinkProgram(shaderProgramId);
 	logShaderStatus(shaderProgramId, GL_LINK_STATUS);
 
+
 	//=== DELETE IN MEMORY SHADERS BECAUSE THEY ARE ALREADY ATTACHED TO THE SHADER PROGRAM
 	glDeleteShader(vertexShaderId);
 	glDeleteShader(fragmentShaderid);
+
+
+	//===== UNIFORM EXAMPLE =======
+	float timeValue = glfwGetTime();
+	float greenValue = (sin(timeValue) / 2.0f) + 0.5f;
+	int vertexColorLocation = glGetUniformLocation(shaderProgramId, "ourColor");
+
+	// temporary use of shader program to add data to the uniform
+	glUseProgram(shaderProgramId);
+	glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
+	glUseProgram(0); // don't know yet if this unbinds the shader program
 
 	//======= DEFINE TRIANGLE DATA ========
 
@@ -97,6 +109,12 @@ void TwoTrianglesExample::executeExample() {
 
 		// rendering commands here
 		glUseProgram(shaderProgramId);
+
+		// update the uniform color
+		float timeValue = glfwGetTime();
+		float greenValue = (sin(timeValue) / 2.0f) + 0.5f;
+		int vertexColorLocation = glGetUniformLocation(shaderProgramId, "ourColor");
+		glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
 
 		glBindVertexArray(vaoIdArray[0]);
 		glDrawArrays(GL_TRIANGLES, 0, 3);

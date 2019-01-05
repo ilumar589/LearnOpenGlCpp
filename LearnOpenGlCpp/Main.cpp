@@ -1,10 +1,11 @@
 #pragma
 
 #include "TwoTrianglesExample.h"
+#include "MoreThanOneAttributeExample.h"
 
 int main() {
 	
-	TwoTrianglesExample::executeExample();
+	MoreThanOneAttributeExample::executeExample();
 
 	return 0;
 }

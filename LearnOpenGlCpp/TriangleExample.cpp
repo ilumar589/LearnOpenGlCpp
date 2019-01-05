@@ -1,5 +1,4 @@
-#include <glad/glad.h>
-#include <glfw3.h>
+#include "EngineCommonDependencies.h"
 #include<iostream>
 
 // global shaders
