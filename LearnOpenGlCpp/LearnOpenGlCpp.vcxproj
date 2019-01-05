@@ -74,7 +74,7 @@
     <LibraryPath>E:\projects\LearnOpenGlCpp\ExternalLibsAndHeaders\Libs;D:\WorkZone\Projects\LearnOpenGlExternalDependecies\libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>D:\WorkZone\Projects\CppProjects\CppLibraries\glfw-3.2.1-headers_and_libs;D:\WorkZone\Projects\CppProjects\CppLibraries\glad_for_opengl_3.3_core\include;$(IncludePath)</IncludePath>
+    <IncludePath>D:\WorkZone\Projects\CppProjects\CppLibraries\stb-master;D:\WorkZone\Projects\CppProjects\CppLibraries\glfw-3.2.1-headers_and_libs;D:\WorkZone\Projects\CppProjects\CppLibraries\glad_for_opengl_3.3_core\include;$(IncludePath)</IncludePath>
     <LibraryPath>D:\WorkZone\Projects\CppProjects\CppLibraries\glfw-3.2.1-headers_and_libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -143,6 +143,7 @@
     <ClCompile Include="MoreThanOneAttributeExample.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="ShaderContainer.cpp" />
+    <ClCompile Include="TestImageLoading.cpp" />
     <ClCompile Include="TriangleExample.cpp" />
     <ClCompile Include="TwoTrianglesExample.cpp" />
   </ItemGroup>
@@ -151,6 +152,7 @@
     <ClInclude Include="MoreThanOneAttributeExample.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="ShaderContainer.h" />
+    <ClInclude Include="TestImageLoading.h" />
     <ClInclude Include="TwoTrianglesExample.h" />
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +162,9 @@
   <ItemGroup>
     <None Include="FragmentShaderT2.glsl" />
     <None Include="VertexShaderT2.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="wall.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

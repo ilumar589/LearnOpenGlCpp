@@ -1,5 +1,6 @@
 #include "MoreThanOneAttributeExample.h"
 #include "Shader.h"
+#include "TestImageLoading.h"
 #include <iostream>
 
 void MoreThanOneAttributeExample::executeExample() {
@@ -29,10 +30,10 @@ void MoreThanOneAttributeExample::executeExample() {
 
 	// setup triangle vertices
 	float triangle_vertices[] = {
-		// positions            // colors
-		-0.5f, -0.5f, 0.0f,     1.0f, 0.0f, 0.0f,
-		0.5f, -0.5f, 0.0f,		0.0f, 1.0f, 0.0f,
-		0.0f, 0.5f, 0.0f,		0.0f, 0.0f, 1.0f
+		// positions            // colors           // texture coordinates
+		-0.5f, -0.5f, 0.0f,     1.0f, 0.0f, 0.0f,      0.0f, 0.0f,
+		0.5f, -0.5f, 0.0f,		0.0f, 1.0f, 0.0f,      1.0f, 0.0f,
+		0.0f, 0.5f, 0.0f,		0.0f, 0.0f, 1.0f,      0.5f, 1.0f
 	};
 
 	unsigned int VAO, VBO;
@@ -47,13 +48,16 @@ void MoreThanOneAttributeExample::executeExample() {
 
 	glBufferData(GL_ARRAY_BUFFER, sizeof(triangle_vertices), triangle_vertices, GL_STATIC_DRAW); // copy the triangle vertices into the vertex buffers object memory
 
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0); // tell OpenGL how the attribute 
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0); // tell OpenGL how the attribute 
 									// pointing to the currently bound vbo should interpret the data
 									// in this case vertex attribute 0 from the currently bounded vao
 	glEnableVertexAttribArray(0); // enable vertex attribute 0
 
-	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
 	glEnableVertexAttribArray(1);
+
+	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+	glEnableVertexAttribArray(2);
 
 	// note that this is allowed, the call to glVertexAttribPointer registered VBO as the vertex attribute's bound vertex buffer object so afterwards we can safely unbind
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -62,21 +66,27 @@ void MoreThanOneAttributeExample::executeExample() {
 	// VAOs requires a call to glBindVertexArray anyways so we generally don't unbind VAOs (nor VBOs) when it's not directly necessary.
 	glBindVertexArray(0);
 
+	int texture = TestImage::loadAndCreateTexture();
+
 	float incrementingOffset = 0.0f;
 
 	while (!glfwWindowShouldClose(window)) {
 
 		// bound check incrementing offset used in uniform
-		if (incrementingOffset >= 0.9f) {
-			incrementingOffset = 0;
-		} else {
-			incrementingOffset += 0.001f;
-		}
+		//if (incrementingOffset >= 0.9f) {
+			//incrementingOffset = 0;
+		//} else {
+			//incrementingOffset += 0.001f;
+		//}
 
 		// input
 		processInput(window);
 
 		// rendering commands here
+
+		// bind texture
+		glBindTexture(GL_TEXTURE_2D, texture);
+
 		shader.use(); // set OpenGL to use the shader program;
 
 		shader.setFloat("xAxisOffset", incrementingOffset);
