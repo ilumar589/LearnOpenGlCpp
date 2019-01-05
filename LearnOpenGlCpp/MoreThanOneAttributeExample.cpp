@@ -62,13 +62,25 @@ void MoreThanOneAttributeExample::executeExample() {
 	// VAOs requires a call to glBindVertexArray anyways so we generally don't unbind VAOs (nor VBOs) when it's not directly necessary.
 	glBindVertexArray(0);
 
+	float incrementingOffset = 0.0f;
+
 	while (!glfwWindowShouldClose(window)) {
+
+		// bound check incrementing offset used in uniform
+		if (incrementingOffset >= 0.9f) {
+			incrementingOffset = 0;
+		} else {
+			incrementingOffset += 0.001f;
+		}
 
 		// input
 		processInput(window);
 
 		// rendering commands here
-		shader.use(); // set OpenGL to use the shader program; !TODO use in loop
+		shader.use(); // set OpenGL to use the shader program;
+
+		shader.setFloat("xAxisOffset", incrementingOffset);
+
 		glBindVertexArray(VAO); // seeing as we only have a single VAO there's no need to bind it every time, but we'll do so to keep things a bit more organized
 		glDrawArrays(GL_TRIANGLES, 0, 3);
 
