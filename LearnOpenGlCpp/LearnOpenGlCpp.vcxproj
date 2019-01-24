@@ -74,8 +74,8 @@
     <LibraryPath>E:\projects\LearnOpenGlCpp\ExternalLibsAndHeaders\Libs;D:\WorkZone\Projects\LearnOpenGlExternalDependecies\libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>D:\WorkZone\Projects\CppProjects\CppLibraries\stb-master;D:\WorkZone\Projects\CppProjects\CppLibraries\glfw-3.2.1-headers_and_libs;D:\WorkZone\Projects\CppProjects\CppLibraries\glad_for_opengl_3.3_core\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\WorkZone\Projects\CppProjects\CppLibraries\glfw-3.2.1-headers_and_libs;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\Kit\InstalledKits\Vulkan_1.1.92.1\Include;D:\WorkZone\Projects\CppProjects\CppLibraries\glm-0.9.9.3\glm\glm;D:\WorkZone\Projects\CppProjects\CppLibraries\stb-master;D:\WorkZone\Projects\CppProjects\CppLibraries\glfw-3.2.1-headers_and_libs;D:\WorkZone\Projects\CppProjects\CppLibraries\glad_for_opengl_3.3_core\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Kit\InstalledKits\Vulkan_1.1.92.1\Lib;D:\WorkZone\Projects\CppProjects\CppLibraries\glfw-3.2.1-headers_and_libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -101,8 +101,8 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>vulkan-1.lib;opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\Kit\InstalledKits\Vulkan_1.1.92.1\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -139,6 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\CppLibraries\glad_for_opengl_3.3_core\src\glad.c" />
+    <ClCompile Include="HelloTriangleApplication.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MoreThanOneAttributeExample.cpp" />
     <ClCompile Include="Shader.cpp" />
@@ -146,14 +147,17 @@
     <ClCompile Include="TestImageLoading.cpp" />
     <ClCompile Include="TriangleExample.cpp" />
     <ClCompile Include="TwoTrianglesExample.cpp" />
+    <ClCompile Include="VulkanMain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EngineCommonDependencies.h" />
+    <ClInclude Include="HelloTriangleApplication.h" />
     <ClInclude Include="MoreThanOneAttributeExample.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="ShaderContainer.h" />
     <ClInclude Include="TestImageLoading.h" />
     <ClInclude Include="TwoTrianglesExample.h" />
+    <ClInclude Include="VulkanMain.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="fragmentShaderT1.txt" />

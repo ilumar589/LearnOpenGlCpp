@@ -39,6 +39,12 @@
     <ClCompile Include="TestImageLoading.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="VulkanMain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HelloTriangleApplication.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ShaderContainer.h">
@@ -57,6 +63,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TestImageLoading.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VulkanMain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HelloTriangleApplication.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

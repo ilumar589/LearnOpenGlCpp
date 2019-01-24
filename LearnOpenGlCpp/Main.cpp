@@ -2,10 +2,11 @@
 
 #include "TwoTrianglesExample.h"
 #include "MoreThanOneAttributeExample.h"
+#include "VulkanMain.h"
 
 int main() {
 	
-	MoreThanOneAttributeExample::executeExample();
+	MyVulkan::main();
 
 	return 0;
 }
