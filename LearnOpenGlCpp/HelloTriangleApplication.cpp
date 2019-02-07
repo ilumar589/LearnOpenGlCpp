@@ -115,6 +115,10 @@ std::vector<const char*> MyVulkan::HelloTriangleApplication::getRequiredExtensio
 	const char** glfwExtensions;
 	glfwExtensions = glfwGetRequiredInstanceExtensions(&glfwExtensionCount);
 
+	// returning stuff like this without move semantics would result in invalid memory access
+	// Before you had to have a pointer to vector<cont char*> so only the pointer would be destroyed
+	// when the function exited, without destroying the underlying memory. Note you don't have to use the new 
+	// keyword with a pointer so memory should still be on the stack
 	std::vector<const char*> extensions(glfwExtensions, glfwExtensions + glfwExtensionCount);
 
 	if (enableValidationLayers) {
